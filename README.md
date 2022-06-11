@@ -78,7 +78,9 @@ Link to the repo: [https://hub.docker.com/r/ekane3/weather_app/](https://hub.doc
 
 Trivy is a tool that scans Docker images vulnerabilities on the DockerHub network and displays them in a table.
 
-Install Trivy with the following command:
-        `sudo apt-get install trivy`
+* Install Trivy: `sudo apt-get install trivy`.    
+Trivy's available on most popular Linux Distributions.But it got its own Docker image which you can use instead of bare-metal installation:  
+        `docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest`  
 Let's scan our image with the following command:
-        `trivy --image ekane3/weather_app:latest`
+        `docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest weatherapp`
+Response : "No topic found" if there's no vulnerability.
