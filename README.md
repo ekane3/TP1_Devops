@@ -3,7 +3,7 @@
 ## Date : 2020-06-09
 
 ## Docs
-### Sujet : Renvoyer la météo d'un lieu en passant en variable d'environnement les coordonnées de la ville
+### Sujet : Renvoyer la météo d'un lieu en passant en variable d'environnement les coordonnées de la ville  
 
 ### 1ère étape : Créer le wrapper avec python
 ```python
@@ -66,10 +66,19 @@ After running the Docker Container, you will see the output meteo printed.
 
 ## Docker Hub
 
-On crée une repo sur Docker Hub nommée weather_app.
-Ensuite on se crée un joli tag sur cette repo avec la commande suivante:
+We create a repo on Docker Hub named weather_app.
+Then we create a nice tag on this repo with the following command:
         `docker tag weatherapp:latest ekane3/weather_app:latest`  
-Et on effectue un push sur notre repo avec la commande suivante:
+And we do a push on our repo with the following command:
         `docker push ekane3/weather_app:latest`  
 
 Link to the repo: [https://hub.docker.com/r/ekane3/weather_app/](https://hub.docker.com/r/ekane3/weather_app/)
+
+#### Etape 4 : Utiliser Trivy 
+
+Trivy is a tool that scans Docker images vulnerabilities on the DockerHub network and displays them in a table.
+
+Install Trivy with the following command:
+        `sudo apt-get install trivy`
+Let's scan our image with the following command:
+        `trivy --image ekane3/weather_app:latest`
