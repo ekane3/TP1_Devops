@@ -1,19 +1,6 @@
 # TP1_Devops
 ## Author : Emile EKANE
-
-## Notation
-- Code disponible sur Github
-- Dockerfile qui build
-- Docker image disponible sur DockerHub
-- API qui renvoie la météo en utilisant la commande suivante en utilisant votre image :
-```bash
-docker run --env LAT="5.902785" --env LONG="102.754175" --env API_KEY=****
-maregistry/api:1.0.0
-```
-## Bonus
-- 0 CVE (trivy) `trivy image maregistry/api:1.0.0`
-- 0 lint errors on Dockerfile (hadolint) `docker run --rm -i hadolint/hadolint < Dockerfile`
-- Aucune données sensibles stockées dans l'image (i.e: openweather API key)
+## Date : 2020-06-09
 
 ## Docs
 ### Sujet : Renvoyer la météo d'un lieu en passant en variable d'environnement les coordonnées de la ville
@@ -72,7 +59,7 @@ We now have a new image called weatherapp.
 
 We run our image using the following command:
         `docker run  
---env LAT="5.902785" --env LON="102.754175" --env API_KEY="240aa650f4db4e154a07d0459c30a347" weatherapp`
+--env LAT="5.902785" --env LON="102.754175" --env API_KEY="240aa650f4db4e154a07d0459c30a347" weatherapp`  
 
 
 After running the Docker Container, you will see the output meteo printed.
@@ -81,8 +68,8 @@ After running the Docker Container, you will see the output meteo printed.
 
 On crée une repo sur Docker Hub nommée weather_app.
 Ensuite on se crée un joli tag sur cette repo avec la commande suivante:
-        `docker tag weatherapp:latest ekane3/weather_app:latest`
+        `docker tag weatherapp:latest ekane3/weather_app:latest`  
 Et on effectue un push sur notre repo avec la commande suivante:
-        `docker push ekane3/weather_app:latest`
+        `docker push ekane3/weather_app:latest`  
 
 Link to the repo: [https://hub.docker.com/r/ekane3/weather_app/](https://hub.docker.com/r/ekane3/weather_app/)
