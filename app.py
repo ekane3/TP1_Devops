@@ -2,10 +2,6 @@ import requests
 import json
 import os
 
-#api_key = "240aa650f4db4e154a07d0459c30a347"
-#lat = "48.208176"
-#lon = "16.373819"
-
 lat = os.environ['LAT']
 lon = os.environ['LON']
 api_key = os.environ['API_KEY']
