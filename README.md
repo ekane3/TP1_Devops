@@ -66,7 +66,7 @@ After running the Docker Container, you will see the output meteo printed.
 
 ## Docker Hub
   
-  
+
 We create a repo on Docker Hub named weather_app.
 Then we create a nice tag on this repo with the following command:
         `docker tag weatherapp:latest ekane3/weather_app:latest`  
@@ -84,6 +84,7 @@ Trivy's available on most popular Linux Distributions.But it got its own Docker 
         `docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest`  
 Let's scan our image with the following command:
         `docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest weatherapp`
+
 Response : "No topic found" if there's no vulnerability.
 
 #### Etape 5 : Using Hadolint
