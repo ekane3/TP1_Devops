@@ -51,8 +51,8 @@ COPY app.py ./
 CMD ["python", "app.py"]
 ```	
 #### Etape 3 : Créer l'image Docker
-> After creating  both the script and the Dockerfile, we can now build the image.
-     `docker build -t weatherapp .`
+> After creating  both the script and the Dockerfile, we can now build the image.  
+     `docker build -t weatherapp .`  
 We verify if our image is built successfully by running the following command:
         `docker images`
 We now have a new image called weatherapp.
@@ -65,7 +65,8 @@ We run our image using the following command:
 After running the Docker Container, you will see the output meteo printed.
 
 ## Docker Hub
-
+  
+  
 We create a repo on Docker Hub named weather_app.
 Then we create a nice tag on this repo with the following command:
         `docker tag weatherapp:latest ekane3/weather_app:latest`  
