@@ -84,3 +84,10 @@ Trivy's available on most popular Linux Distributions.But it got its own Docker 
 Let's scan our image with the following command:
         `docker run --rm -v trivy-cache:/root/.cache/ -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest weatherapp`
 Response : "No topic found" if there's no vulnerability.
+
+#### Etape 5 : Using Hadolint
+
+Hadolint is a tool that checks Dockerfile syntax and linting.Hadolint has dozens of built-in rules that check for common configuration and security issues. The linter aims to make your Dockerfiles compliant with the image building best practices suggested by Docker.
+* Install Hadolint: `sudo apt-get install hadolint`.
+In my case,i used the hadolint docker image by running the following command: `docker run --rm -i hadolint/hadolint`
+* To run the linter on our Dockerfile: `docker run --rm -i hadolint/hadolint < Dockerfile`

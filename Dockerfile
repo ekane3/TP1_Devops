@@ -1,5 +1,5 @@
 #DockerFile to run my weather wrapper app
-FROM python:latest
+FROM python:3.10.1
 
 #Labels as key value pair
 LABEL maintainer="ekane3.github.io"
@@ -15,7 +15,7 @@ COPY app.py ./
 
 
 #Installing the required packages
-RUN pip install requests
+RUN pip install --no-cache-dir requests==2.27.1
 #From official image documentation
 CMD ["python", "app.py"]
 
